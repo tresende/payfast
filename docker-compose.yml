@@ -1,0 +1,26 @@
+#docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+#cd /usr/src/node/alura/NodeJS/teste-node/casaDoCodigo
+db:
+  image: mysql
+  ports:
+    - "3306:3306"
+  expose:
+    - "3306"
+  environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: payfast
+      MYSQL_USER: web
+      MYSQL_PASSWORD: web
+  volumes:
+    - ///Users/thiago/Desktop/Estudos/node/payfast/database:/var/lib/mysql
+node:
+  build: .
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  environment:
+    DB_HOST: db:3306
+    DB_USER: web
+    DB_PASS: web
+    DB_PORT: "3306"

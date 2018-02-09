@@ -1,0 +1,2 @@
+{"level":"info","message":"Log: undefined","timestamp":"2017-12-01T01:07:53.194Z"}
+{"level":"info","message":"::ffff:172.17.0.1 - - [01/Dec/2017:01:07:53 +0000] \"GET /pagamentos/pagamento/1 HTTP/1.1\" 304 -\n","timestamp":"2017-12-01T01:07:53.507Z"}
